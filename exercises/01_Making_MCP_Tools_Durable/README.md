@@ -2,8 +2,7 @@
 
 During this exercise, you will:
 
-- Build durability and persistence to your MCP tools with Temporal
-- Create your own durable MCP tools
+- Build durability and persistence to your MCP tools with Temporal Workflows
 - Test the integration between Claude Desktop, MCP servers, and Temporal workflows
 
 Make your changes to the code in the `practice` subdirectory (look for TODO comments that will guide you to where you should make changes to the code). If you need a hint or want to verify your changes, look at the complete version in the `solution` subdirectory.
@@ -26,7 +25,7 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 
 ## Part D: Create your MCP Tool that generates your weather chart
 
-8. In `mcp_servers/server.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow. 
+8. In `mcp_servers/weather.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow. 
 9. Use the provided comment that describes what the tool does so that the tool can present its capabilities to Claude Desktop. Save your file.
 
 ## Part E: Test your MCP tool

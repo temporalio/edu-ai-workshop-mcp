@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "weather": {
+            "command": "/opt/homebrew/bin/uv",
+            "args": [
+                "--directory",
+                "/Users/azhou/Desktop/edu-ai-workshop-mcp/",
+                "run",
+                "mcp_servers/weather.py"
+            ]
+        }
+    }
+}
