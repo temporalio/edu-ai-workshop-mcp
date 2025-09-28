@@ -1,4 +1,4 @@
-# AI Agent Workshop with Temporal
+# AI MCP Workshop with Temporal
 
 This repository contains a hands-on workshop demonstrating how to build durable MCP tools.
 ## Workshop Overview

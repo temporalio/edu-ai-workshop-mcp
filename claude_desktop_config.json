@@ -8,6 +8,15 @@
                 "run",
                 "mcp_servers/weather.py"
             ]
+        },
+        "invoice": {
+            "command": "/opt/homebrew/bin/uv",
+            "args": [
+                "--directory",
+                "/Users/azhou/Desktop/edu-ai-workshop-mcp/",
+                "run",
+                "mcp_servers/invoice.py"
+            ]
         }
     }
 }
