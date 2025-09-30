@@ -34,66 +34,6 @@ async def get_forecast(latitude: float, longitude: float) -> str:
         task_queue="weather-task-queue",
     )
     return await handle.result()
-
-# TODO Part E: Add your get_weather_chart tool here.
-# You can use this comment to describe the tool, just uncomment:
-# """Generate a weather chart visualization for a location using Temporal workflow.
-
-#     This tool fetches weather data and creates a chart showing temperature trends,
-#     and optionally precipitation chances over the forecast period.
-
-#     Args:
-#         latitude: Latitude of the location
-#         longitude: Longitude of the location
-#         include_precipitation: If True, generates an advanced chart with both temperature
-#                                and precipitation data. If False, generates a simple
-#                                temperature-only chart.
-
-#     Returns:
-#         A dictionary containing:
-#         - success: Whether the chart was generated successfully
-#         - location: The city and state of the location
-#         - chart_url: URL to the generated chart image
-#         - summary: Brief weather summary for the next few periods
-#         - message: Status message
-#         - error: Error message if unsuccessful
-#     """
-
-@mcp.tool
-async def get_weather_chart(
-    latitude: float,
-    longitude: float,
-    include_precipitation: bool = False
-) -> dict:
-    """Generate a weather chart visualization for a location using Temporal workflow.
-
-    This tool fetches weather data and creates a chart showing temperature trends,
-    and optionally precipitation chances over the forecast period.
-
-    Args:
-        latitude: Latitude of the location
-        longitude: Longitude of the location
-        include_precipitation: If True, generates an advanced chart with both temperature
-                               and precipitation data. If False, generates a simple
-                               temperature-only chart.
-
-    Returns:
-        A dictionary containing:
-        - success: Whether the chart was generated successfully
-        - location: The city and state of the location
-        - chart_url: URL to the generated chart image
-        - summary: Brief weather summary for the next few periods
-        - message: Status message
-        - error: Error message if unsuccessful
-    """
-    client = await get_temporal_client()
-    handle = await client.start_workflow(
-        workflow="GetWeatherChart",
-        args=[latitude, longitude, include_precipitation],
-        id=f"weather-chart-{latitude}-{longitude}",
-        task_queue="weather-task-queue",
-    )
-    return await handle.result()
     
 if __name__ == "__main__":
     # Initialize and run the server

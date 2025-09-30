@@ -2,10 +2,10 @@
 
 During this exercise, you will:
 
-- Implement Temporal Signals to confirm downstream systems recorded the conversion.
-- Build Temporal Queries to fetch the latest conversion amount from workflow state.
-- Pause workflow progress with `workflow.wait_condition` so it waits on Signals or timeouts.
-- Add durability to long-running workflows by exposing them through MCP tools and workers.
+- Implement a Temporal Signal to send external input to your running Workflow Execution
+- Build a Temporal Query to fetch the latest conversion amount from yourWworkflow state
+- Pause Workflow progress so it waits on Signals or timeouts
+- Add durability to long-running workflows by exposing them through MCP tools
 
 Make your changes to the code in the `practice` subdirectory (look for TODO comments that will guide you to where you should make changes to the code). If you need a hint or want to verify your changes, look at the complete version in the `solution` subdirectory.
 
@@ -58,7 +58,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 14. Run the Temporal server with `temporal server start-dev`.
 15. Run your Worker with `python worker.py` from the `practice` directory.
 16. Copy this configuration to your Claude Desktop config file: `cp claude_desktop_config.json ~/Library/Application\ Support/Claude/`.
-17. Restart Claude Desktop
+17. Restart Claude Desktop.
 18. Test your tool by prompting Claude Desktop for the following: 
 
 `Can you convert this amount into USD:
