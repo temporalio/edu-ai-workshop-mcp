@@ -31,7 +31,9 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 ## Part E: Test your MCP tool
 
 10. Run the Temporal server with `temporal server start-dev`.
-11. Run your Worker with `python worker.py`.
+11. Run your Worker with `python worker.py` from the `practice` directory.
 12. Copy this configuration to your Claude Desktop config file: `cp claude_desktop_config.json ~/Library/Application\ Support/Claude/`.
 13. Restart Claude Desktop
 14. Test your tool by prompting Claude Desktop for the weather from a city of your choice and a chart that visualizes the weather.
+
+## This is the end of the exercise.

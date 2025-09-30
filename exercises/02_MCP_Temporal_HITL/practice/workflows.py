@@ -9,15 +9,11 @@ class ConvertCurrencyWorkflow:
         self.db_entry_confirmed: bool = False
         self.converted_amount: float | None = None
 
-    @workflow.signal
-    async def ConfirmDatabaseAdd(self) -> None:
-        """Signal that the converted amount has been added to the Dummy database."""
-        self.db_entry_confirmed = True
+    # TODO Part C: Create a Signal that sets the value of `db_entry_confirmed` 
+    # (already set for you) to `True`.
 
-    @workflow.query
-    def GetConversionAmount(self) -> float | None:
-        """Get the converted amount if available."""
-        return self.converted_amount
+    # TODO Part B: Create a Query that gets the conversion amount 
+    # and returns the value of `converted_amount` (already set for you).
 
     @workflow.run
     async def run(self, amount: float, from_currency: str, to_currency: str) -> float:
@@ -31,9 +27,9 @@ class ConvertCurrencyWorkflow:
 
         # Execute the conversion activity
         conversion_result = await workflow.execute_activity(
-            convert_currency,
-            args=[amount, from_currency, to_currency],
-            start_to_close_timeout=timedelta(seconds=30),
+            # TODO Part A: Call your `convert_currency` Activity
+            args=[], # TODO Part A: Pass in the arguments of `amount`, `from_currency`, `to_currency`
+            # TODO Part A: Set your Start-to-Close Timeout to be 30 seconds.
             retry_policy=RetryPolicy(
                 initial_interval=timedelta(seconds=1),
                 maximum_interval=timedelta(seconds=10),
@@ -47,12 +43,12 @@ class ConvertCurrencyWorkflow:
         
         # Wait for confirmation that the amount has been added to the database
         workflow.logger.info("Waiting for confirmation that amount is added to Dummy database...")
-        await workflow.wait_condition(
-            lambda: self.db_entry_confirmed is True, 
-            timeout=timedelta(days=5)
-        )
+        # TODO Part C: Use `workflow.wait_condition` to pause execution until one of 2 conditions
+        # `self.db_entry_confirmed` becomes `True`, or
+        # 5 days pass (whichever happens first).
+
         workflow.logger.info("Dummy Database add confirmed. Completing workflow.")
-        return self.converted_amount
+        # TODO Part B: Return the value of the `converted_amount`.
 
 @workflow.defn
 class InvoiceWorkflow:
