@@ -1,12 +1,11 @@
 {
     "mcpServers": {
         "weather": {
-            "command": "/opt/homebrew/bin/uv",
+            "command": "npx",
             "args": [
-                "--directory",
-                "<full path to the directory containing the edu-ai-workshop repo>",
-                "run",
-                "mcp_servers/weather.py"
+                "-y",
+                "mcp-remote",
+                "https://<your-codespace-url-for-port-5125>.app.github.dev/sse"
             ]
         }
     }
