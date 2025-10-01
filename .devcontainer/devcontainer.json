@@ -1,6 +1,11 @@
 {
     "image": "temporalio/gitpod-edu:1.4",
     "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter"
+            ]
+        },
         "codespaces": {
             "openFiles": [
                 "README.md"
