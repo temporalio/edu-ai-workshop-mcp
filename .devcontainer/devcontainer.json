@@ -3,7 +3,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-toolsai.jupyter"
+                "ms-toolsai.jupyter",
+                "ms-python.python"
             ]
         },
         "codespaces": {
@@ -13,7 +14,7 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125],
-    "postStartCommand": "temporal server start-dev --ui-port 8080",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 & python3 /workspaces/edu-ai-workshop-mcp/mcp_servers/weather.py &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2"
     },
