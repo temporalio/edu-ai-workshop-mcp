@@ -1,0 +1,9 @@
+{
+    "jupyter.kernels.filter": [
+        {
+            "path": "/usr/local/bin/python3",
+            "type": "pythonEnvironment"
+        }
+    ],
+    "python.defaultInterpreterPath": "/usr/local/bin/python3"
+}

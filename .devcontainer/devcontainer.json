@@ -21,7 +21,8 @@
     "portsAttributes": {
         "5125": {
           "label": "MCP Server",
-          "onAutoForward": "notify"
+          "onAutoForward": "notify",
+          "visibility": "public"
         }
     }
 }
