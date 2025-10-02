@@ -17,8 +17,8 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125],
-    "postCreateCommand": "python3 -m venv /workspaces/edu-ai-workshop-mcp/.venv && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install --upgrade pip && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install ipykernel jupyter && /workspaces/edu-ai-workshop-mcp/.venv/bin/python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
-    "postStartCommand": "temporal server start-dev --ui-port 8080 & /workspaces/edu-ai-workshop-mcp/.venv/bin/python /workspaces/edu-ai-workshop-mcp/mcp_servers/weather.py &",
+    "postCreateCommand": "pip install uv && uv sync && uv pip install ipykernel jupyter && uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 & cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2"
     },
