@@ -1,5 +1,8 @@
 {
     "image": "temporalio/gitpod-edu:1.4",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -14,7 +17,7 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125],
-    "postCreateCommand": "python3 -m venv /workspaces/edu-ai-workshop-mcp/.venv && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install --upgrade pip && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install ipykernel jupyter && /workspaces/edu-ai-workshop-mcp/.venv/bin/python -m ipykernel install --user --name=edu-ai-workshop-mcp --display-name='Python (edu-ai-workshop-mcp)' && mkdir -p /home/gitpod/.local/share/jupyter/kernels/edu-ai-workshop-mcp",
+    "postCreateCommand": "python3 -m venv /workspaces/edu-ai-workshop-mcp/.venv && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install --upgrade pip && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install ipykernel jupyter && /workspaces/edu-ai-workshop-mcp/.venv/bin/python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
     "postStartCommand": "temporal server start-dev --ui-port 8080 & python3 /workspaces/edu-ai-workshop-mcp/mcp_servers/weather.py &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2"
