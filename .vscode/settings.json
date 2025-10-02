@@ -4,5 +4,16 @@
     "jupyter.kernels.excludePythonEnvironments": [],
     "notebook.defaultFormatter": "ms-python.python",
     "jupyter.askForKernelRestart": false,
-    "notebook.showCellStatusBarAfterExecute": true
+    "notebook.showCellStatusBarAfterExecute": true,
+    "jupyter.defaultKernel": "Python 3 (ipykernel)",
+    "notebook.kernelProviderAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "kernelProvider": "ms-toolsai.jupyter"
+        }
+    ],
+    "files.associations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.trustedWorkspaces": true
 }
