@@ -17,16 +17,17 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125],
-    "postCreateCommand": "pip3 install --user uv && export PATH=$HOME/.local/bin:$PATH && uv sync && uv pip install ipykernel jupyter && uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
-    "postStartCommand": "temporal server start-dev --ui-port 8080 & cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
+    "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && . $HOME/.cargo/env && uv sync && uv pip install ipykernel jupyter && uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 & . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
-        "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
+        "PATH": "${containerEnv:HOME}/.cargo/bin:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
     },
     "portsAttributes": {
         "5125": {
           "label": "MCP Server",
           "visibility": "public"
         }
-    }
+    },
+    "postAttachCommand": "gh codespace ports visibility 5125:public -c $CODESPACE_NAME 2>/dev/null || true"
 }
