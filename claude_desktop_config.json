@@ -1,11 +1,9 @@
 {
     "mcpServers": {
         "weather": {
-            "command": "npx",
+            "command": "/opt/homebrew/bin/mcp-remote",
             "args": [
-                "-y",
-                "mcp-remote",
-                "https://sturdy-cod-jj5qpjq5jrjjfjppr-5125.app.github.dev/sse"
+                "https://cuddly-succotash-pjrp5jprjjpjhx7r-5125.app.github.dev/sse"
             ]
         }
     }
