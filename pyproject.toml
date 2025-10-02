@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "temporalio",
-    "litellm",
     "fastmcp",
     "ipykernel",
     "pip"
@@ -100,10 +99,6 @@ explicit_package_bases = true
 
 [[tool.mypy.overrides]]
 module = [
-    "litellm",
-    "litellm.*",
-    "reportlab",
-    "reportlab.*",
     "config",
     "dotenv",
 ]
