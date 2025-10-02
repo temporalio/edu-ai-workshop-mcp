@@ -14,18 +14,14 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125],
-    "postCreateCommand": "python3 -m ipykernel install --user --name=edu-ai-workshop-mcp --display-name='Python (edu-ai-workshop-mcp)'",
+    "postCreateCommand": "python3 -m venv /workspaces/edu-ai-workshop-mcp/.venv && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install --upgrade pip && /workspaces/edu-ai-workshop-mcp/.venv/bin/pip install ipykernel && /workspaces/edu-ai-workshop-mcp/.venv/bin/python -m ipykernel install --user --name=edu-ai-workshop-mcp --display-name='Python (edu-ai-workshop-mcp)'",
     "postStartCommand": "temporal server start-dev --ui-port 8080 & python3 /workspaces/edu-ai-workshop-mcp/mcp_servers/weather.py &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2"
     },
     "portsAttributes": {
         "5125": {
-          "label": "MCP Server",
-          "onAutoForward": "openBrowser",
-          "protocol": "http",
-          "requireLocalPort": false,
-          "elevateIfNeeded": false
+          "label": "MCP Server"
         }
     },
     "postAttachCommand": "gh codespace ports visibility 5125:public -c $CODESPACE_NAME || true"

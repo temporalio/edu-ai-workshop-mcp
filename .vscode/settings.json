@@ -1,9 +1,6 @@
 {
-    "jupyter.kernels.filter": [
-        {
-            "path": "/usr/local/bin/python3",
-            "type": "pythonEnvironment"
-        }
-    ],
-    "python.defaultInterpreterPath": "/usr/local/bin/python3"
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "jupyter.kernels.excludePythonEnvironments": [],
+    "notebook.defaultFormatter": "ms-python.python"
 }
