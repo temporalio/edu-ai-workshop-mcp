@@ -1,12 +1,7 @@
 {
     "image": "temporalio/gitpod-edu:1.4",
     "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/desktop-lite:1": {
-            "password": "temporal",
-            "webPort": "6080",
-            "vncPort": "5901"
-        }
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "customizations": {
         "vscode": {
@@ -21,9 +16,9 @@
             ]
         }
     },
-    "forwardPorts": [8080, 7233, 5125, 6080],
+    "forwardPorts": [8080, 7233, 5125, 6080, 5901],
     "postCreateCommand": "bash .devcontainer/setup-claude.sh",
-    "postStartCommand": "temporal server start-dev --ui-port 8080 & . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
+    "postStartCommand": "~/start-desktop.sh && temporal server start-dev --ui-port 8080 & . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
         "PATH": "${containerEnv:HOME}/.cargo/bin:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",
