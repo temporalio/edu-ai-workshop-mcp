@@ -3,7 +3,7 @@ set -e
 
 # Install dependencies for uv and Python setup first
 curl -LsSf https://astral.sh/uv/install.sh | sh
-. $HOME/.cargo/env
+export PATH="$HOME/.local/bin:$PATH"
 uv sync
 uv pip install ipykernel jupyter
 uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'
