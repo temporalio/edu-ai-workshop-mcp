@@ -16,9 +16,9 @@
             ]
         }
     },
-    "forwardPorts": [8080, 7233, 5125, 6080, 5901],
+    "forwardPorts": [8080, 7233, 5125, 6080],
     "postCreateCommand": "bash .devcontainer/setup-claude.sh",
-    "postStartCommand": "temporal server start-dev --ui-port 8080 & ~/start-desktop.sh & sleep 2 && export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 & (test -f ~/start-desktop.sh && ~/start-desktop.sh) & sleep 3 && export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
         "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",
@@ -30,9 +30,13 @@
             "visibility": "public"
         },
         "6080": {
-            "label": "Desktop (noVNC)",
+            "label": "Desktop (with Claude)",
+            "visibility": "public"
+        },
+        "8080": {
+            "label": "Temporal UI",
             "visibility": "public"
         }
     },
-    "postAttachCommand": "gh codespace ports visibility 5125:public -c $CODESPACE_NAME 2>/dev/null || true && gh codespace ports visibility 6080:public -c $CODESPACE_NAME 2>/dev/null || true"
+    "postAttachCommand": "gh codespace ports visibility 5125:public -c $CODESPACE_NAME 2>/dev/null || true && gh codespace ports visibility 6080:public -c $CODESPACE_NAME 2>/dev/null || true && gh codespace ports visibility 8080:public -c $CODESPACE_NAME 2>/dev/null || true"
 }
