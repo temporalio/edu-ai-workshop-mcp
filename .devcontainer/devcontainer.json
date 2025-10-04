@@ -18,10 +18,11 @@
     },
     "forwardPorts": [8080, 7233, 5125, 6080, 5901],
     "postCreateCommand": "bash .devcontainer/setup-claude.sh",
-    "postStartCommand": "~/start-desktop.sh && temporal server start-dev --ui-port 8080 & export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 & ~/start-desktop.sh & sleep 2 && export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
-        "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
+        "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",
+        "DISPLAY": ":1"
     },
     "portsAttributes": {
         "5125": {

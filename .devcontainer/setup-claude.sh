@@ -1,25 +1,24 @@
 #!/bin/bash
 set -e
 
-# Install dependencies for uv and Python setup first
+# Install uv (it's fast)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
+
+# Python setup (keep this - needed for your workshop)
 uv sync
 uv pip install ipykernel jupyter
 uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'
 
-# Install desktop environment and VNC components
+# Install ONLY essential desktop packages (this is the slow part)
 echo "Installing desktop environment..."
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     fluxbox \
     tigervnc-standalone-server \
-    tigervnc-common \
     novnc \
     websockify \
-    xterm \
-    wget \
-    net-tools
+    xterm
 
 # Set up VNC password
 mkdir -p ~/.vnc
@@ -35,38 +34,21 @@ exec fluxbox &
 EOF
 chmod +x ~/.vnc/xstartup
 
-# Download and install Claude Desktop
-echo "Installing Claude Desktop..."
-cd /tmp
-wget -O claude.deb "https://storage.googleapis.com/osprey-downloads-c02f6a0d-347c-492b-a752-3e0651722e97/claude-desktop_latest_amd64.deb" || true
+# Download Claude Desktop (background this to not block)
+echo "Downloading Claude Desktop..."
+(
+  cd /tmp
+  wget -q -O claude.deb "https://storage.googleapis.com/osprey-downloads-c02f6a0d-347c-492b-a752-3e0651722e97/claude-desktop_latest_amd64.deb" && \
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ./claude.deb
+) &
 
-if [ -f claude.deb ]; then
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ./claude.deb || true
-fi
-
-# Alternative: Install via AppImage if .deb fails
-if [ ! -f /usr/bin/claude ] && [ ! -f /opt/Claude/claude ]; then
-    echo "Trying AppImage installation..."
-    wget -O /tmp/Claude.AppImage "https://storage.googleapis.com/osprey-downloads-c02f6a0d-347c-492b-a752-3e0651722e97/claude-desktop_latest_x86_64.AppImage" || true
-    if [ -f /tmp/Claude.AppImage ]; then
-        chmod +x /tmp/Claude.AppImage
-        sudo mv /tmp/Claude.AppImage /usr/local/bin/claude
-    fi
-fi
-
-# Create startup script for VNC+noVNC
+# Create startup script while Claude downloads
 cat > ~/start-desktop.sh << 'EOF'
 #!/bin/bash
-# Kill any existing VNC servers
 vncserver -kill :1 2>/dev/null || true
-
-# Start VNC server
 vncserver :1 -geometry 1920x1080 -depth 24 -localhost no
-
-# Start noVNC
 websockify -D --web=/usr/share/novnc/ 6080 localhost:5901
 EOF
 chmod +x ~/start-desktop.sh
 
-echo "Setup complete!"
-echo "Run ~/start-desktop.sh to start the desktop environment"
+echo "Setup complete! Claude Desktop installing in background..."
