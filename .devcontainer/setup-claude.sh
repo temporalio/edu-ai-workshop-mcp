@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Installing Claude Desktop (background) ==="
-exec > >(tee -a /tmp/setup-desktop.log) 2>&1
+exec > >(tee -a /tmp/setup-claude.log) 2>&1
 
 # Desktop environment
 sudo apt-get update

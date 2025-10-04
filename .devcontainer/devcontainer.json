@@ -18,7 +18,7 @@
     },
     "forwardPorts": [8080, 7233, 5125, 6080],
     "postCreateCommand": "bash .devcontainer/setup-python.sh",
-    "postStartCommand": "temporal server start-dev --ui-port 8080 >/tmp/temporal.log 2>&1 & sleep 3 && export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 & bash .devcontainer/setup-desktop.sh >/tmp/setup-desktop.log 2>&1 && ~/start-desktop.sh &",
+    "postStartCommand": "temporal server start-dev --ui-port 8080 >/tmp/temporal.log 2>&1 & sleep 3 && export PATH=\"$HOME/.local/bin:$PATH\" && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 & bash .devcontainer/setup-claude.sh >/tmp/setup-claude.log 2>&1 && ~/start-desktop.sh &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
         "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",

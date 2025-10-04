@@ -16,4 +16,4 @@ echo "Setting up Jupyter kernel..."
 uv pip install ipykernel jupyter
 uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'
 
-echo "   Claude Desktop installing in background..."
+echo "Claude Desktop installing in background..."
