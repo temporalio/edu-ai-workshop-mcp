@@ -1,10 +1,10 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
     "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/go:1": {
-            "version": "latest"
-        }
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "customizations": {
         "vscode": {
@@ -14,9 +14,7 @@
             ]
         },
         "codespaces": {
-            "openFiles": [
-                "README.md"
-            ]
+            "openFiles": ["README.md"]
         }
     },
     "forwardPorts": [8080, 7233, 5125, 6080],
@@ -27,17 +25,8 @@
         "DISPLAY": ":1"
     },
     "portsAttributes": {
-        "5125": {
-            "label": "MCP Server",
-            "visibility": "public"
-        },
-        "6080": {
-            "label": "Claude Desktop",
-            "visibility": "public"
-        },
-        "8080": {
-            "label": "Temporal UI",
-            "visibility": "public"
-        }
+        "5125": {"label": "MCP Server", "visibility": "public"},
+        "6080": {"label": "Claude Desktop", "visibility": "public"},
+        "8080": {"label": "Temporal UI", "visibility": "public"}
     }
 }
