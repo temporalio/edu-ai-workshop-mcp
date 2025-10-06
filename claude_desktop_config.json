@@ -1,9 +1,9 @@
 {
     "mcpServers": {
         "weather": {
-            "command": "/opt/homebrew/bin/mcp-remote",
+            "command": "/Users/azhou/.nvm/versions/node/v20.19.5/bin/mcp-remote",
             "args": [
-                "<Run ‘./get-mcp-url.sh’ to get your MCP Server URL and put the output here>"
+                "<YOUR_CODESPACES_URL_HERE>"
             ]
         }
     }

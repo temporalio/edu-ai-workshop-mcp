@@ -22,6 +22,7 @@ This workshop demonstrates two key concepts:
 ## Prerequisites
 
 - Python 3.13+
+- [Claude Desktop](https://claude.ai/download) installed
 - Basic familiarity with Python and async programming
 
 ## Running the Workshop: Codespaces
