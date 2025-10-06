@@ -1,8 +1,5 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
+    "image": "temporalio/gitpod-edu:1.4",
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
@@ -11,22 +8,31 @@
             "extensions": [
                 "ms-toolsai.jupyter",
                 "ms-python.python"
-            ]
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "${containerEnv:HOME}/.local/bin/python"
+            }
         },
         "codespaces": {
-            "openFiles": ["README.md"]
+            "openFiles": [
+                "README.md"
+            ]
         }
     },
-    "forwardPorts": [8080, 7233, 5125, 6080],
-    "postCreateCommand": "bash .devcontainer/setup.sh",
-    "postStartCommand": "bash .devcontainer/start-services.sh",
-    "remoteEnv": {
-        "PATH": "${containerEnv:HOME}/.temporalio/bin:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",
-        "DISPLAY": ":1"
-    },
+    "forwardPorts": [8080, 7233],
     "portsAttributes": {
-        "5125": {"label": "MCP Server", "visibility": "public"},
-        "6080": {"label": "Claude Desktop", "visibility": "public"},
-        "8080": {"label": "Temporal UI", "visibility": "public"}
+        "8080": {
+            "label": "Temporal UI",
+            "onAutoForward": "openBrowser"
+        },
+        "7233": {
+            "label": "Temporal Server"
+        }
+    },
+    "onCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH=\"$HOME/.local/bin:$PATH\" && uv sync && uv pip install pip ipykernel jupyter && uv run python -m ipykernel install --user --name='python3' --display-name='Python 3 (ipykernel)'",
+    "postStartCommand": "temporal server start-dev --ui-port 8080",
+    "remoteEnv": {
+        "PROMPT_DIRTRIM": "2",
+        "PATH": "${containerEnv:HOME}/.cargo/bin:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
     }
 }
