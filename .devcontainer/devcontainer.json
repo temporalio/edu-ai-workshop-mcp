@@ -17,7 +17,7 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125, 6080, 5901],
-    "postCreateCommand": "bash .devcontainer/setup-claude.sh",
+    "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
     "postStartCommand": "~/start-desktop.sh && temporal server start-dev --ui-port 8080 & . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
