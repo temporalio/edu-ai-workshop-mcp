@@ -3,7 +3,7 @@
         "weather": {
             "command": "/opt/homebrew/bin/mcp-remote",
             "args": [
-                "https://cuddly-succotash-pjrp5jprjjpjhx7r-5125.app.github.dev/sse"
+                "<Run ‘./get-mcp-url.sh’ to get your MCP Server URL and put the output here>",
             ]
         }
     }
