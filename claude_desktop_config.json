@@ -1,7 +1,7 @@
 {
     "mcpServers": {
         "weather": {
-            "command": "/Users/azhou/.nvm/versions/node/v20.19.5/bin/mcp-remote",
+            "command": "<YOUR_mcp-remote_PACKAGE_LOCATION>",
             "args": [
                 "<YOUR_CODESPACES_URL_HERE>"
             ]

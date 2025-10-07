@@ -13,6 +13,8 @@ This workshop demonstrates two key concepts:
 
 ```
 ├── notebooks/          # Interactive Jupyter notebooks for the workshop
+│   ├── Solution        # Solutions for the code-alongs during the workshop
+│   ├── Content         # Jupyter notebooks to run during workshop
 ├── exercises/          # Hands-on exercises for the workshop
 │   ├── Practice        # Every chapter will have a Practice dir where students do their work in
 │   ├── Solution        # Every chapter will have a Solution dir where students can refer

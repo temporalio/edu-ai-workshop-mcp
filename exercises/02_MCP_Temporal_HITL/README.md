@@ -34,7 +34,7 @@ To do this, we will use `workflow.wait_condition`. Please invoke this logic.
 10. In `mcp_servers/invoice.py` please add a tool in to invoke the `ConvertCurrencyWorkflow`. We will provide it here:
 
 ```python
-@mcp.tool()
+@mcp.tool
 async def convert_currency(amount: float, from_currency: str, to_currency: str) -> Dict[str, str]:
     """Convert a specific amount from one currency to another using the ConvertCurrencyWorkflow.
     
@@ -55,11 +55,10 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 
 ## Part E: Testing Your MCP Tools
 
-14. Run the Temporal server with `temporal server start-dev`.
-15. Run your Worker with `python worker.py` from the `practice` directory.
-16. Copy this configuration to your Claude Desktop config file: `cp claude_desktop_config.json ~/Library/Application\ Support/Claude/`.
-17. Restart Claude Desktop.
-18. Test your tool by prompting Claude Desktop for the following: 
+14. Run your Worker with `python worker.py` from the `practice` directory.
+15. Go to the terminal window where you're running `uv run python mcp_servers/invoice.py`, stop it with `Ctrl+C`, then reran it.
+16. Restart Claude Destkop.
+17. Test your tool by prompting Claude Desktop for the following: 
 
 `Can you convert this amount into USD:
 {
@@ -84,8 +83,8 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
     }
   ]
 }`
-19. Look at the Web UI and confirm that your Workflow is running.
-20. In Claude Desktop, complete the Workflow Execution by letting it know that you want to add this conversion to the database.
-21. Test your Query by prompting Claude Desktop for the conversion amount.
+18. Look at the Web UI and confirm that your Workflow is running.
+19. In Claude Desktop, complete the Workflow Execution by letting it know that you want to add this conversion to the database.
+20. Test your Query by prompting Claude Desktop for the conversion amount.
 
 ## This is the end of the exercise.

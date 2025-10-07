@@ -54,12 +54,11 @@ Provided comment:
 
 ## Part E: Test your MCP tool
 
-10. Make sure your Temporal server is running with `temporal server start-dev`.
-11. Run your Worker with `python worker.py` from the `practice` directory.
-12. To register a new tool in Claude Desktop when running MCP servers in Codespaces, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run python mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
-13. Restart Claude Desktop
-14. Test your tool by prompting Claude Desktop first for the weather from a city of your choice.
-15. Then ask it to 'make me a chart to visualize the weather data'.
-16. Allow it to use the `Get Weather Chart` tool.
+10. Run your Worker with `python worker.py` from the `practice` directory.
+11. To register a new tool in Claude Desktop when running MCP servers in Codespaces, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run python mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
+12. Restart Claude Desktop
+13. Test your tool by prompting Claude Desktop first for the weather from a city of your choice.
+14. Then ask it to 'make me a chart to visualize the weather data'.
+15. Allow it to use the `Get Weather Chart` tool.
 
 ## This is the end of the exercise.
