@@ -73,4 +73,4 @@ async def get_weather_chart(
 
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run()
+    mcp.run(transport="sse", host="0.0.0.0", port=5125)

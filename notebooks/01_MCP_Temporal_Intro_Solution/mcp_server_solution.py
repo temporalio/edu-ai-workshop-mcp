@@ -37,4 +37,5 @@ async def get_forecast(latitude: float, longitude: float) -> str:
     return await handle.result()
 
     if __name__ == "__main__":
-        mcp.run(transport='stdio')
+        # Initialize and run the server
+        mcp.run(transport="sse", host="0.0.0.0", port=5125)

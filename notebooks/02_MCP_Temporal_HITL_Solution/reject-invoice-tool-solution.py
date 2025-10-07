@@ -15,7 +15,7 @@ async def get_temporal_client():
         temporal_client = await Client.connect("localhost:7233")
     return temporal_client
 
-@mcp.tool()
+@mcp.tool
 async def approve_invoice(workflow_id: str, run_id: str) -> str:
     """Signal approval for the invoice workflow."""
     client = await get_temporal_client()
@@ -23,7 +23,7 @@ async def approve_invoice(workflow_id: str, run_id: str) -> str:
     await handle.signal("ApproveInvoice")
     return "APPROVED"
 
-@mcp.tool()
+@mcp.tool
 async def reject_invoice(workflow_id: str, run_id: str) -> str:
     """Signal rejection for the invoice workflow."""
     client = await get_temporal_client()

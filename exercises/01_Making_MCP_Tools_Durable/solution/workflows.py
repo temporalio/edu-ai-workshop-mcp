@@ -72,13 +72,13 @@ class GetForecast:
 @workflow.defn
 class GetWeatherChart:
     @workflow.run
-    async def get_weather_chart(self, latitude: float, longitude: float, use_post_method: bool = False) -> dict:
+    async def get_weather_chart(self, latitude: float, longitude: float, include_precipitation: bool = False) -> dict:
         """Get weather data and generate a chart visualization.
 
         Args:
             latitude: Latitude of the location
             longitude: Longitude of the location
-            use_post_method: If True, uses the advanced POST method with precipitation data
+            include_precipitation: If True, uses the advanced POST method with precipitation data
 
         Returns:
             A dict containing the forecast data and chart URL
@@ -117,7 +117,7 @@ class GetWeatherChart:
 
         chart_url = await workflow.execute_activity(
             generate_weather_chart,
-            args=[forecast_data, use_post_method, 5],
+            args=[forecast_data, include_precipitation, 5],
             schedule_to_close_timeout=timedelta(seconds=30),
             retry_policy=retry_policy,
         )

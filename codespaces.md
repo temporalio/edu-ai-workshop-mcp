@@ -40,7 +40,7 @@ You should navigate to this tab any time you need to access the Web UI.
 
 To open some work terminals, navigate back to the Codespaces tab, and click on "TERMINAL" next to the "PORTS" tab that you clicked on earlier.
 
-Then, to create more work terminals for this course, use the drop-down arrow on the right side of the screen, navigate to "Split Terminal".
+Then, to create more work terminals for this workshop, use the drop-down arrow on the right side of the screen, navigate to "Split Terminal".
 
 ![9 — Split Terminal](https://i.postimg.cc/tC46G9Bh/9-split-terminal.png)
 
@@ -51,6 +51,8 @@ Repeat this for as many terminals as you need:
 Your Codespace will automatically be stopped 30 minutes after you close the browser tab. This is to prevent excessive resource utilization. It can be resumed from the same part of the Github UI if needed, within 30 days of the last time it was used.
 
 ![12 — Resume Codespace](https://i.postimg.cc/ZKWqLnfj/12-resume-codespace.png)
+
+To see how to run your MCP Server connected to Claude Desktop locally on Codespace, read [this](./codespace-configure-mcp.md).
 
 ### Delete Your Codespaces
 

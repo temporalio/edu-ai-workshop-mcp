@@ -26,14 +26,40 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 ## Part D: Create your MCP Tool that generates your weather chart
 
 8. In `mcp_servers/weather.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow. 
-9. Use the provided comment that describes what the tool does so that the tool can present its capabilities to Claude Desktop. Save your file.
+9. Use this provided comment that describes what the tool does so that the tool can present its capabilities to Claude Desktop. Save your file.
+Provided comment:
+
+"""Generate a weather chart visualization for a location using Temporal workflow.
+
+    This tool fetches weather data and creates a chart showing temperature trends,
+    and optionally precipitation chances over the forecast period.
+
+    Args:
+        latitude: Latitude of the location
+        longitude: Longitude of the location
+        include_precipitation: If True, generates an advanced chart with both temperature
+                               and precipitation data. If False, generates a simple
+                               temperature-only chart.
+
+    Returns:
+        A dictionary containing:
+        - success: Whether the chart was generated successfully
+        - location: The city and state of the location
+        - chart_url: URL to the generated chart image
+        - summary: Brief weather summary for the next few periods
+        - message: Status message
+        - error: Error message if unsuccessful
+    """
+```
 
 ## Part E: Test your MCP tool
 
-10. Run the Temporal server with `temporal server start-dev`.
+10. Make sure your Temporal server is running with `temporal server start-dev`.
 11. Run your Worker with `python worker.py` from the `practice` directory.
-12. Copy this configuration to your Claude Desktop config file: `cp claude_desktop_config.json ~/Library/Application\ Support/Claude/`.
+12. To register a new tool in Claude Desktop when running MCP servers in Codespaces, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run python mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
 13. Restart Claude Desktop
-14. Test your tool by prompting Claude Desktop for the weather from a city of your choice and a chart that visualizes the weather.
+14. Test your tool by prompting Claude Desktop first for the weather from a city of your choice.
+15. Then ask it to 'make me a chart to visualize the weather data'.
+16. Allow it to use the `Get Weather Chart` tool.
 
 ## This is the end of the exercise.

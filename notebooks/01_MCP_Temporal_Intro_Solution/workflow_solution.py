@@ -1,7 +1,6 @@
 from temporalio import workflow
 from datetime import timedelta
 from temporalio.common import RetryPolicy
-import asyncio
 
 retry_policy = RetryPolicy(
     maximum_attempts=0,  # Infinite retries

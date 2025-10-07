@@ -25,6 +25,12 @@ This workshop demonstrates two key concepts:
 - [Claude Desktop](https://claude.ai/download) installed
 - Basic familiarity with Python and async programming
 
+## Access to Other Repositories
+
+For the demos, you also need these repositories cloned on your local machine.
+- [Durable MCP](https://github.com/temporal-community/durable-mcp) for chapter 1
+- [Temporal Invoice MCP](https://github.com/Aslan11/temporal-invoice-mcp/) for chapter 2
+
 ## Running the Workshop: Codespaces
 
 You can run this workshop on Codespaces as an Exercise Environment.
