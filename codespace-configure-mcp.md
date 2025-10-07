@@ -21,7 +21,7 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
    e. Leave this terminal window open until we are done with the setup.
 
-   _Disclaimer: You need [`mcp-remote`](https://www.npmjs.com/package/mcp-remote), a Node.js package twhich connects Claude Desktop to remote MCP servers via HTTP/SSE. Without it, Claude Desktop can only connect to MCP servers running locally. You need to install `mcp-remote` and you need to do so with
+   _Disclaimer: You need [`mcp-remote`](https://www.npmjs.com/package/mcp-remote), a Node.js package which connects Claude Desktop to remote MCP servers via HTTP/SSE. Without it, Claude Desktop can only connect to MCP servers running locally. You need to install `mcp-remote` and you need to do so with
    Node.js 20+. This script will do this for you._
 
 2. **Get your MCP Server URL**
@@ -87,3 +87,6 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 6. When you open Claude Desktop, you should now see your configured MCP server on your Claude Desktop.
 
 ![Configured Claude Desktop](https://i.postimg.cc/W4dNR4BQ/configured-mcp-server.png "Configured Claude Desktop")
+
+**Troubleshooting Note**:
+If your Claude desktop is stuck and not loading, even on a force quit, this may be because of an incorrect configuration. In this case, search for `claude_desktop_config.json` from your machine instead and edit the file from there instead of from Claude Desktop.
