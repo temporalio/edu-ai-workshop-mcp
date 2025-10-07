@@ -1,0 +1,71 @@
+# Configure Your MCP Server on Codespace with Claude Desktop
+
+This guide helps you connect your MCP Server running in Codespaces to Claude Desktop running on your local machine.
+
+## Architecture
+
+- **Codespaces (Remote)**: Runs the MCP server
+- **Local Machine**: Runs Claude Desktop + `mcp-remote` proxy
+
+## Setup Steps
+
+1. **Install mcp-remote**
+   a. Over in Codespace, on the file explorer, on the right hand side you'll see `setup-mcp-remote.sh`. Right click, then click `Download` to save this file to your local machine.
+   b. Open the terminal on your local machine and navigate to where you downloaded `setup-mcp-remote.sh`.
+   c. Run `chmod +x setup-mcp-remote.sh`, then `./setup-mcp-remote.sh`.
+   d. There will be two configurations, one for `claude_desktop_config.json` in Codespaces and one for `claude_desktop_config.json` in Claude Desktop. Copy the JSON output for Codespace and paste it to `claude_desktop_config.json` on Codepace.
+   e. Leave this terminal window open until we are done with the setup.
+
+   _Disclaimer: You need [`mcp-remote`](https://www.npmjs.com/package/mcp-remote), a Node.js package twhich connects Claude Desktop to remote MCP servers via HTTP/SSE. Without it, Claude Desktop can only connect to MCP servers running locally. You need to install `mcp-remote` and you need to do so with
+   Node.js 20+. This script will do this for you._
+
+2. **Get your MCP Server URL**
+   a. Over in Codespace, in a terminal window, run `./get-mcp-url.sh` to get your MCP Server URL.
+   b. Copy the URL output (e.g., `https://xxx-5125.app.github.dev/sse`) and paste it to `claude_desktop_config.json` where it says `<YOUR_CODESPACES_URL_HERE>`.
+   c. Your final JSON should look something like this:
+
+```json
+{
+    "mcpServers": {
+        "weather": {
+            "command": "/opt/homebrew/bin/mcp-remote",
+            "args": [
+                "https://refactored-umbrella-r4gp54pg4g6g2pvvw-5125.app.github.dev/sse"
+            ]
+        }
+    }
+}
+```
+
+3. **Start the MCP Server on a terminal window in Codespace**
+   a. In a terminal window in Codespace, run `uv run python mcp_servers/weather.py`.
+   b. Leave this sever running.
+
+4. **Configure Claude Desktop**
+   a. Make sure [Claude Desktop](https://claude.ai/download) is installed on your local machine.
+   b. Open Claude Desktop.
+   c. Menu bar → `Claude` → `Settings` → `Developer` → `Edit Config`
+   d. Right-click `claude_desktop_config.json` → `Open With` → `Text Edit`
+   e. Copy the JSON output for Claude Desktop from step 1 and paste it in the `Text Edit`
+   Copy the configuration output from step 2 (e.g., `https://xxx-5125.app.github.dev/sse`)
+   f. Replace `<YOUR_CODESPACES_URL_HERE>` with the URL from step 1
+   Your final config should look like:
+
+```json
+{
+    "mcpServers": {
+        "weather": {
+            "command": "/opt/homebrew/bin/node",
+            "args": [
+                "/opt/homebrew/lib/node_modules/mcp-remote/dist/proxy.js",
+                "https://refactored-umbrella-r4gp54pg4g6g2pvvw-5125.app.github.dev/sse"
+            ]
+        }
+    }
+}
+```
+
+5. **Restart Claude Desktop**
+6. When you open Claude Desktop, you should now see your configured MCP server on your Claude Desktop.
+
+![Configured Claude Desktop](https://i.postimg.cc/W4dNR4BQ/configured-mcp-server.png "Configured Claude Desktop")
