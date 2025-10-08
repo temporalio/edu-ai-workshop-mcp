@@ -12,6 +12,9 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 1. **Install mcp-remote**
 
    a. Make sure you already have [Node v20+](https://nodejs.org/en/download) installed on your machine. 
+        - To check, run: `node --v`
+        - Upgrade on [windows](https://nodesource.com/blog/Update-nodejs-versions-on-windows)
+        - Upgrade on [Mac](https://nodesource.com/blog/update-Node.js-versions-on-MacOS)
    
    b. Over in Codespace, on the file explorer, on the right hand side you'll see `setup-mcp-remote.sh`. Right click, then click `Download` to save this file to your local machine.
 
@@ -86,9 +89,9 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 5. **Restart Claude Desktop**
 
-6. When you open Claude Desktop, you should now see your configured MCP server on your Claude Desktop.
+6. When you open Claude Desktop, you should now see your configured MCP server (e.g., weather) on your Claude Desktop.
 
-![Configured Claude Desktop](https://i.postimg.cc/W4dNR4BQ/configured-mcp-server.png "Configured Claude Desktop")
+![Configured Claude Desktop](https://i.postimg.cc/Gp77vHsq/successful-remote-mcp-connection.png "Configured Claude Desktop")
 
 --
 **Troubleshooting Notes**:
