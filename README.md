@@ -25,6 +25,7 @@ This workshop demonstrates two key concepts:
 
 - Python 3.13+
 - [Claude Desktop](https://claude.ai/download) installed
+- [Node v20+](https://nodejs.org/en/download) installed
 - Basic familiarity with Python and async programming
 
 ## Access to Other Repositories

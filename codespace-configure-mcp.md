@@ -11,15 +11,17 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 1. **Install mcp-remote**
 
-   a. Over in Codespace, on the file explorer, on the right hand side you'll see `setup-mcp-remote.sh`. Right click, then click `Download` to save this file to your local machine.
+   a. Make sure you already have [Node v20+](https://nodejs.org/en/download) installed on your machine. 
+   
+   b. Over in Codespace, on the file explorer, on the right hand side you'll see `setup-mcp-remote.sh`. Right click, then click `Download` to save this file to your local machine.
 
-   b. Open the terminal on your local machine and navigate to where you downloaded `setup-mcp-remote.sh`.
+   c. Open the terminal on your local machine and navigate to where you downloaded `setup-mcp-remote.sh`.
 
-   c. Run `chmod +x setup-mcp-remote.sh`, then `./setup-mcp-remote.sh`.
+   d. Run `chmod +x setup-mcp-remote.sh`, then `./setup-mcp-remote.sh`.
 
-   d. There will be two configurations, one for `claude_desktop_config.json` in Codespaces and one for `claude_desktop_config.json` in Claude Desktop. Copy the JSON output for Codespace and paste it to `claude_desktop_config.json` on Codepace.
+   e. There will be two configurations, one for `claude_desktop_config.json` in Codespaces and one for `claude_desktop_config.json` in Claude Desktop. Copy the JSON output for Codespace and paste it to `claude_desktop_config.json` on Codepace.
 
-   e. Leave this terminal window open until we are done with the setup.
+   f. Leave this terminal window open until we are done with the setup.
 
    _Disclaimer: You need [`mcp-remote`](https://www.npmjs.com/package/mcp-remote), a Node.js package which connects Claude Desktop to remote MCP servers via HTTP/SSE. Without it, Claude Desktop can only connect to MCP servers running locally. You need to install `mcp-remote` and you need to do so with
    Node.js 20+. This script will do this for you._
@@ -88,5 +90,7 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 ![Configured Claude Desktop](https://i.postimg.cc/W4dNR4BQ/configured-mcp-server.png "Configured Claude Desktop")
 
-**Troubleshooting Note**:
-If your Claude desktop is stuck and not loading, even on a force quit, this may be because of an incorrect configuration. In this case, search for `claude_desktop_config.json` from your machine instead and edit the file from there instead of from Claude Desktop.
+--
+**Troubleshooting Notes**:
+- If your Claude desktop is stuck and not loading, even on a force quit, this may be because of an incorrect configuration. In this case, search for `claude_desktop_config.json` from your machine instead and edit the file from there instead of from Claude Desktop.
+- Make sure Port 5125 visibility is set to Public. This should be already switched on automatically but if it's not connecting, make sure to check this.

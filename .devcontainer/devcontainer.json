@@ -6,9 +6,12 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter@2024.10.0",
                 "ms-python.python"
-            ]
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/workspaces/edu-ai-workshop-mcp/.venv/bin/python"
+            }
         },
         "codespaces": {
             "openFiles": [
@@ -17,8 +20,8 @@
         }
     },
     "forwardPorts": [8080, 7233, 5125, 6080, 5901],
-    "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-    "postStartCommand": "~/start-desktop.sh && temporal server start-dev --ui-port 8080 & . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
+    "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && . $HOME/.local/bin/env && uv sync && uv run python -m ipykernel install --user --name=python3 --display-name='Python 3 (ipykernel)'",
+    "postStartCommand": "nohup ~/start-desktop.sh > /tmp/desktop.log 2>&1 & nohup temporal server start-dev --ui-port 8080 > /tmp/temporal.log 2>&1 & sleep 5 && . $HOME/.cargo/env && cd /workspaces/edu-ai-workshop-mcp && nohup uv run python mcp_servers/weather.py > /tmp/mcp-server.log 2>&1 &",
     "remoteEnv": {
         "PROMPT_DIRTRIM": "2",
         "PATH": "${containerEnv:HOME}/.cargo/bin:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}",
