@@ -12,9 +12,9 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 1. **Install mcp-remote**
 
    a. Make sure you already have [Node v20+](https://nodejs.org/en/download) installed on your machine. 
-        - To check, run: `node --v`
-        - Upgrade on [windows](https://nodesource.com/blog/Update-nodejs-versions-on-windows)
-        - Upgrade on [Mac](https://nodesource.com/blog/update-Node.js-versions-on-MacOS)
+    - To check, run: `node --v`
+    - Upgrade on [windows](https://nodesource.com/blog/Update-nodejs-versions-on-windows)
+    - Upgrade on [Mac](https://nodesource.com/blog/update-Node.js-versions-on-MacOS)
    
    b. Over in Codespace, on the file explorer, on the right hand side you'll see `setup-mcp-remote.sh`. Right click, then click `Download` to save this file to your local machine.
 
@@ -35,7 +35,7 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
    b. Copy the URL output (e.g., `https://xxx-5125.app.github.dev/sse`) and paste it to `claude_desktop_config.json` where it says `<YOUR_CODESPACES_URL_HERE>`.
 
-   c. Your final JSON should look something like this:
+   c. Your final JSON on Codespace should look something like this:
 
 ```json
 {
@@ -69,9 +69,9 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
    d. Right-click `claude_desktop_config.json` → `Open With` → `Text Edit`
 
-   e. Copy the JSON output for Claude Desktop from step 1 and paste it in the `Text Edit`. Copy the configuration output from step 2 (e.g., `https://xxx-5125.app.github.dev/sse`)
+   e. Copy the JSON output for Claude Desktop from step 1 and paste it in the `Text Edit`. Copy the MCP Server URL, which was the configuration output from step 2 (e.g., `https://xxx-5125.app.github.dev/sse`).
 
-   f. Replace `<YOUR_CODESPACES_URL_HERE>` with the URL from step 1. Your final config should look like:
+   f. In `claude_desktop_config.json` on Claude Desktop, and replace `<YOUR_CODESPACES_URL_HERE>` with the MCP Server URL. Your final config for Claude Desktop should look like:
 
 ```json
 {
