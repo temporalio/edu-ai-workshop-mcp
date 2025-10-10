@@ -13,7 +13,7 @@ class ConvertCurrencyWorkflow:
     # (already set for you) to `True`.
 
     # TODO Part B: Create a Query that gets the conversion amount 
-    # and returns the value of `converted_amount` (already set for you).
+    # and returns the current value of `converted_amount` (already set for you).
 
     @workflow.run
     async def run(self, amount: float, from_currency: str, to_currency: str) -> float:

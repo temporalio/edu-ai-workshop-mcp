@@ -1,6 +1,5 @@
 from temporalio.client import Client
 from fastmcp import FastMCP
-from typing import Dict
 
 # Initialize FastMCP server
 mcp = FastMCP("invoice")

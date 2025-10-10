@@ -18,12 +18,12 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 
 ## Part B: Create a Query to Get Conversion Amount
 
-6. Now let's create a Query to get the conversion amount. In `workflows.py`, create a Query that gets the conversion amount and returns the value of `converted_amount` (already set for you).
+6. Now let's create a Query, `GetConversionAmount`, to get the conversion amount. In `workflows.py`, create a Query that gets the conversion amount and returns the current value of `converted_amount` (already set for you).
 7. At the end of the Workflow, return the value of the `converted_amount`.
 
 ## Part C: Create a Signal that Confirms Converseion Amount
 
-7. We will now create a Signal that confirms that the conversion amount has been added to your database. In `workflows.py`, create a Signal that sets the value of `db_entry_confirmed` (already set for you) to `True`.
+7. We will now create a Signal, `ConfirmDatabaseAdd`, that confirms that the conversion amount has been added to your database. In `workflows.py`, create a Signal that sets the value of `db_entry_confirmed` (already set for you) to `True`.
 8. In this Workflow, we want to pause execution until either one of two conditions is met:
   a. `self.db_entry_confirmed` becomes `True`, or
   b. 5 days pass (whichever happens first).
@@ -56,7 +56,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 ## Part E: Testing Your MCP Tools
 
 14. Run your Worker with `python worker.py` from the `practice` directory.
-15. Go to the terminal window where you're running `uv run python mcp_servers/invoice.py`, stop it with `Ctrl+C`, then reran it.
+15. Go to the terminal window where you're running `uv run python mcp_servers/invoice.py`, stop it with `Ctrl+C`, then rerun it.
 16. Restart Claude Destkop.
 17. Test your tool by prompting Claude Desktop for the following: 
 
@@ -83,6 +83,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
     }
   ]
 }`
+Allow it to use the `convert_currency` tool.
 18. Look at the Web UI and confirm that your Workflow is running.
 19. In Claude Desktop, complete the Workflow Execution by letting it know that you want to add this conversion to the database.
 20. Test your Query by prompting Claude Desktop for the conversion amount.
