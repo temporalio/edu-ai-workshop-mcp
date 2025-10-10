@@ -25,6 +25,12 @@ class InvoiceWorkflow:
             timeout=timedelta(days=5),
         )
 
+       # Auto-reject if no approval happened after 5 days
+        if self.approved is None:
+            self.approved = False
+            return "REJECTED"
+
+        # Only process if approved
         # Process each line item
         for line in invoice.get("lines", []):
             await workflow.sleep(timedelta(seconds=2))

@@ -29,16 +29,20 @@ class InvoiceWorkflow:
         )
         # Wait for the approval signal
 
+        # Wait for the approval signal
         await workflow.wait_condition(
             lambda: self.approved is not None,
             timeout=timedelta(days=5),
         )
 
-        if not self.approved:
-            workflow.logger.info("REJECTED")
+       # Auto-reject if no approval happened after 5 days
+        if self.approved is None:
+            self.approved = False
             self.status = "REJECTED"
             return "REJECTED"
 
+        # Only process if approved
+        # Process each line item
         self.status = "APPROVED"
         # Process each line item
         for line in invoice.get("lines", []):
