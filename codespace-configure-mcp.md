@@ -93,7 +93,7 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 ![Configured Claude Desktop](https://i.postimg.cc/Gp77vHsq/successful-remote-mcp-connection.png "Configured Claude Desktop")
 
---
+---
 **Troubleshooting Notes**:
 - If your Claude desktop is stuck and not loading, even on a force quit, this may be because of an incorrect configuration. In this case, search for `claude_desktop_config.json` from your machine instead and edit the file from there instead of from Claude Desktop.
 - Make sure Port 5125 visibility is set to Public. This should be already switched on automatically but if it's not connecting, make sure to check this.
