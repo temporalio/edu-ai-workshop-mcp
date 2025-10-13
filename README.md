@@ -24,7 +24,7 @@ This workshop demonstrates two key concepts:
 ## Prerequisites
 
 - Python 3.13+
-- [Claude Desktop](https://claude.ai/download) installed
+- [Claude Desktop](https://claude.ai/download) installed. This requires an account on `claude.ai` and access to the email address associated with that account. 
 - [Node v20+](https://nodejs.org/en/download) installed
 
 ## Access to Other Repositories
