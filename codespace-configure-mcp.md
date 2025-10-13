@@ -89,9 +89,11 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 5. **Restart Claude Desktop**
 
-6. When you open Claude Desktop, you should now see your configured MCP server (e.g., weather) on your Claude Desktop.
+6. When you open Claude Desktop, you should now see your configured MCP server (e.g., weather) on your Claude Desktop and the blue toggle should be switched on.
 
 ![Configured Claude Desktop](https://i.postimg.cc/Gp77vHsq/successful-remote-mcp-connection.png "Configured Claude Desktop")
+
+Troubleshooting Note: If you see the MCP server configured, but the blue toggle is not switched on, just try restarting Claude Desktop again.
 
 ---
 **Troubleshooting Notes**:
