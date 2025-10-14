@@ -1,0 +1,1 @@
+By catching the exception and returning `None`, the Activity completes successfully from Temporal's perspective. Temporal only retries Activities when they raise an exception, not when they return a value (even if that value is `None`).
