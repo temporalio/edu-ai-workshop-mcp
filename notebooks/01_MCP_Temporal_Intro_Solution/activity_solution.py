@@ -4,7 +4,7 @@ import httpx
 
 USER_AGENT = "weather-app/1.0"
 
-@activity.defn # Implement the Activity as a function decorated with the `@activity.defn` decorator.
+@activity.defn
 async def make_nws_request(url: str) -> dict[str, Any] | None:
     """Make a request to the NWS API with proper error handling."""
     headers = {
