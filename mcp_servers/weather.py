@@ -40,4 +40,4 @@ if __name__ == "__main__":
     mcp.run(transport="sse", host="0.0.0.0", port=5125)
 
 # Note: The SSE transport for MCP is deprecated, officially replaced by the HTTP Protocol.
-# We will replace this protocol at a random time.
+# We will replace this protocol at a later time.
