@@ -1,5 +1,7 @@
 # Making MCP Tools Durable Exercise #1
 
+In this exercise, you'll create an additional tool for Claude Desktop to be able to use: creating a chart to plot the temperature in a place over the span of five days. After having Claude Desktop give you the weather forecast, you'll then generate a chart as well.
+
 During this exercise, you will:
 
 - Build durability and persistence to your MCP tools with Temporal Workflows

@@ -1,9 +1,11 @@
 # Making MCP Tools Durable Exercise #1
 
+In this exercise, you'll add another MCP tool which helps convert currency for you if your invoice is in a different currency. You'll also create a Signal that simulates adding the converted amount to a dummy database and signals the workflow to complete. You'll also create a query that queries for the converted amount from a currency conversion workflow
+
 During this exercise, you will:
 
 - Implement a Temporal Signal to send external input to your running Workflow Execution
-- Build a Temporal Query to fetch the latest conversion amount from yourWworkflow state
+- Build a Temporal Query to fetch the data from your Workflow state
 - Pause Workflow progress so it waits on Signals or timeouts
 - Add durability to long-running workflows by exposing them through MCP tools
 
