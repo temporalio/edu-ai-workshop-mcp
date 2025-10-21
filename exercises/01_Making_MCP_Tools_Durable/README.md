@@ -52,7 +52,6 @@ Provided comment:
         - message: Status message
         - error: Error message if unsuccessful
     """
-```
 
 ## Part E: Test your MCP tool
 

@@ -12,7 +12,7 @@ async def make_nws_request_buggy(url: str) -> dict[str, Any] | None:
         "User-Agent": USER_AGENT,
         "Accept": "application/geo+json"
     }
-    raise ApplicationError(
+    raise ApplicationError( # Remove the error by commenting it out or deleting it
         "Simulated timeout: Weather service temporarily unavailable"
     )
     async with httpx.AsyncClient() as client:
