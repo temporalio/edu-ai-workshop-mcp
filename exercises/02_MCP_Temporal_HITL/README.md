@@ -58,7 +58,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 ## Part E: Testing Your MCP Tools
 
 14. Run your Worker with `python worker.py` from the `practice` directory.
-15. Go to the terminal window where you're running `uv run python mcp_servers/invoice.py`, stop it with `Ctrl+C`, then rerun it.
+15. Go to the terminal window where you're running `uv run mcp_servers/invoice.py`, stop it with `Ctrl+C`, then rerun it.
 16. Restart Claude Destkop.
 17. Test your tool by prompting Claude Desktop for the following: 
 

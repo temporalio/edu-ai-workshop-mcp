@@ -51,7 +51,7 @@ This guide helps you connect your MCP Server running in Codespaces to Claude Des
 
 3. **Start the MCP Server on a terminal window in Codespace**
 
-   a. In a new terminal window in Codespace, run `uv run python mcp_servers/weather.py`. Close any popup windows that may appear.
+   a. In a new terminal window in Codespace, run `uv run mcp_servers/weather.py`. Close any popup windows that may appear.
 
     _Note: To create more work terminals for this workshop, use the drop-down arrow on the right side of the screen, navigate to "Split Terminal"._
     ![9 — Split Terminal](https://i.postimg.cc/tC46G9Bh/9-split-terminal.png)

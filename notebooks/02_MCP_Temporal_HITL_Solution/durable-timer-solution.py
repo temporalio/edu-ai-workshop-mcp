@@ -1,7 +1,6 @@
 from datetime import timedelta
 from temporalio import workflow
 from temporalio.common import RetryPolicy
-from temporalio import workflow
 
 # sandboxed=False is a Notebook only requirement. You normally don't do this
 @workflow.defn(sandboxed=False)
