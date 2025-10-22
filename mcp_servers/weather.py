@@ -38,6 +38,3 @@ async def get_forecast(latitude: float, longitude: float) -> str:
 if __name__ == "__main__":
     # Initialize and run the server
     mcp.run(transport="sse", host="0.0.0.0", port=5125)
-
-# Note: The SSE transport for MCP is deprecated, officially replaced by the HTTP Protocol.
-# We will replace this protocol at a later time.

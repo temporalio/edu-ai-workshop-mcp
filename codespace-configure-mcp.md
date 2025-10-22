@@ -97,5 +97,8 @@ Troubleshooting Note: If you see the MCP server configured, but the blue toggle 
 ---
 **Troubleshooting Notes**:
 - Try restarting your Temporal server on Codespace: `temporal server start-dev`
+- Try restarting your MCP server on Codespace: stop it with `Ctrl+C`, then run `uv run mcp_servers/weather.py` again.
 - If your Claude desktop is stuck and not loading, even on a force quit, this may be because of an incorrect configuration. In this case, search for `claude_desktop_config.json` from your machine instead and edit the file from there instead of from Claude Desktop.
-- Make sure Port 5125 visibility is set to Public. This should be already switched on automatically but if it's not connecting, make sure to check this.
+--
+**SSE Transport Note:**
+The SSE transport for MCP is deprecated, officially replaced by the HTTP Protocol. We will replace this protocol at a later time.
