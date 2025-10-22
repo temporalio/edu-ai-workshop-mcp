@@ -1,5 +1,5 @@
 # Note: MCP servers cannot be run directly in Jupyter notebooks because
-# MCP servers need to run as separate processes that communicate with stdio protocol
+# MCP servers need to run as separate processes that communicate with SSE protocol
 # Therefore, we also have this code in a separate Python file that can be run
 # as a standalone MCP server (mcp_servers/weather.py).
 

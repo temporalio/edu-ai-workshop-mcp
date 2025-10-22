@@ -18,7 +18,13 @@ async def get_temporal_client():
 
 @mcp.tool
 async def process_invoice(invoice: Dict) -> Dict[str, str]:
-    """Start the InvoiceWorkflow with the given invoice JSON."""
+    """Process an invoice by starting the InvoiceWorkflow.
+    Use this tool whenever the user asks to process or submit an invoice. 
+
+    Args: invoice: Dictionary containing invoice_id, customer, and lines array with description, amount, and due_date
+    Returns: Dictionary with workflow_id and run_id for tracking the invoice processing
+     
+    """
     client = await get_temporal_client()
     handle = await client.start_workflow(
         "InvoiceWorkflow",

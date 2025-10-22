@@ -52,8 +52,6 @@ Your Codespace will automatically be stopped 30 minutes after you close the brow
 
 ![12 — Resume Codespace](https://i.postimg.cc/ZKWqLnfj/12-resume-codespace.png)
 
-To see how to run your MCP Server connected to Claude Desktop locally on Codespace, read [this](./codespace-configure-mcp.md).
-
 ### Delete Your Codespaces
 
 Once you are done with this course or the exercises, manually delete your codespaces. There are costs associated with storing codespaces. You should therefore delete any codespaces you no longer need. Here are the steps you need to take to delete your codespaces:

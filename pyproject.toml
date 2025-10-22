@@ -10,7 +10,9 @@ dependencies = [
     "ipykernel",
     "jupyter",
     "pip",
-    "pexpect"
+    "pexpect",
+    "streamlit",
+    "openai"
 ]
 authors = [{email = "angela.zhou@temporal.io"}]
 
