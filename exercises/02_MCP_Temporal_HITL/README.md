@@ -57,12 +57,10 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 
 ## Part E: Testing Your MCP Tools
 
-14. Run your Worker with `python worker.py` from the `practice` directory.
-15. Go to the terminal window where you're running `uv run mcp_servers/invoice.py`, stop it with `Ctrl+C`, then rerun it.
-16. Restart Claude Destkop.
-17. Test your tool by prompting Claude Desktop for the following: 
-
-`Can you convert this amount into USD:
+10. Run your Worker with `uv run worker.py` from the `practice` directory in a new terminal.
+11. To register a new tool, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run mcp_servers/invoice.py`, stop it with `Ctrl+C`, then run it again.
+12. Go to the MCP Client interface and click `Load More Tools`. You should now see seven available tools: `process_invoice`, `invoice_status`, `approve_invoice`, `reject_invoice`, `convert_currency`, `get_conversion_amount`, `confirm_database_add`.
+13. Clear the chat with the `Clear Chat` button on the bottom left. In the chat interface, ask something like: `Can you convert this amount from EUR to USD? The current exchange rate is 1.16 USD per EUR:
 {
   "invoice_id": "INV-2024-EUR-001",
   "customer": "European Tech GmbH",
@@ -84,10 +82,11 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
       "currency": "EUR"
     }
   ]
-}`
-Allow it to use the `convert_currency` tool.
+}`. The `convert_currency` tool will be called.
 18. Look at the Web UI and confirm that your Workflow is running.
-19. In Claude Desktop, complete the Workflow Execution by letting it know that you want to add this conversion to the database.
+19. In your MCP Client interface, complete the Workflow Execution by: "Simulate adding this converted bill to a dummy database."
+20. Test your Query by prompting Claude Desktop for the conversion amount.
+
 20. Test your Query by prompting Claude Desktop for the conversion amount.
 
 ## This is the end of the exercise.

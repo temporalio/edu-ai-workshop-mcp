@@ -1,6 +1,7 @@
 from temporalio.client import Client
 from fastmcp import FastMCP
 from typing import Dict
+
 import uuid
 
 # Initialize FastMCP server
@@ -18,13 +19,33 @@ async def get_temporal_client():
 
 @mcp.tool
 async def process_invoice(invoice: Dict) -> Dict[str, str]:
-    """Process an invoice by starting the InvoiceWorkflow.
-    Use this tool whenever the user asks to process or submit an invoice. 
-
-    Args: invoice: Dictionary containing invoice_id, customer, and lines array with description, amount, and due_date
-    Returns: Dictionary with workflow_id and run_id for tracking the invoice processing
-     
     """
+    Process an invoice by starting the InvoiceWorkflow.
+    Use this tool whenever the user asks to process or submit an invoice.
+    
+    Args:
+        invoice_id: Invoice ID (e.g., "INV-100")
+        customer: Customer name (e.g., "ACME Corp")
+        item_description: Description of the item (e.g., "Widget A")
+        amount: Amount in dollars (e.g., 100)
+        due_date: Due date in YYYY-MM-DD format (e.g., "2024-06-30")
+        
+    Returns: Dictionary with workflow_id and run_id
+    """
+
+    # Structure invoice as json
+    invoice = {
+        "invoice_id": invoice_id,
+        "customer": customer,
+        "lines": [
+            {
+                "description": item_description,
+                "amount": amount,
+                "due_date": due_date
+            }
+        ]
+    }
+    
     client = await get_temporal_client()
     handle = await client.start_workflow(
         "InvoiceWorkflow",

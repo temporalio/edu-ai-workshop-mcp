@@ -52,7 +52,6 @@ async def call_mcp_tool(tool_name: str, tool_input: dict):
     try:
         async with Client(MCP_SERVER_URL) as client:
             result = await client.call_tool(tool_name, tool_input)
-            # Extract text from result
             if hasattr(result, 'content') and len(result.content) > 0:
                 return result.content[0].text
             return str(result)
@@ -73,7 +72,7 @@ def main():
     )
 
     st.title("MCP Client Interface")
-    st.caption("Testing Your MCP Tools with Streamli")
+    st.caption("Testing Your MCP Tools with Streamlit")
 
     init_session_state()
 
