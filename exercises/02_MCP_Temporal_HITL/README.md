@@ -52,7 +52,24 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 ```
 
 11. Next, create a tool which invokes the `ConfirmDatabaseAdd` Signal.
+  - Use this provided comment that describes what the tool does so that the tool can present its capabilities to MCP Client. 
+  ```
+    """Signal the workflow to add the converted amount to the dummy database and complete.
+      
+    Use this tool when the user says to confirm, add, or store the conversion to the database.
+    This will signal the workflow to proceed with the simulated database add.
+    
+    Args:
+        workflow_id: The workflow ID from convert_currency
+        run_id: The run ID from convert_currency
+    
+    Returns:
+        Confirmation message
+    """
+    ```
 12. Create a tool which invokes the `GetConversionAmount` Query.
+  - Use this provided comment that describes what the tool does so that the tool can present its capabilities to the MCP Client. 
+  """Query the converted amount from a currency conversion workflow."""
 13. Save your `mcp_servers/invoice.py` file.
 
 ## Part E: Testing Your MCP Tools
@@ -83,10 +100,8 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
     }
   ]
 }`. The `convert_currency` tool will be called.
-18. Look at the Web UI and confirm that your Workflow is running.
-19. In your MCP Client interface, complete the Workflow Execution by: "Simulate adding this converted bill to a dummy database."
-20. Test your Query by prompting Claude Desktop for the conversion amount.
-
-20. Test your Query by prompting Claude Desktop for the conversion amount.
+14. Look at the Web UI and confirm that your Workflow is running.
+15. In your MCP Client interface, complete the Workflow Execution by: "Confirm that the converted amount has been added to the Dummy database."
+16. Test your Query by prompting the MCP Client Interface for the conversion amount.
 
 ## This is the end of the exercise.

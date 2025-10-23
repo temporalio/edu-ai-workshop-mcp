@@ -81,10 +81,17 @@ async def get_conversion_amount(workflow_id: str, run_id: str) -> float | None:
 
 @mcp.tool
 async def confirm_database_add(workflow_id: str) -> str:
-    """Confirm that the converted amount has been added to the Dummy database.
-
-    This simulates adding the converted amount to a Dummy database and signals
-    the workflow to complete.
+    """Signal the workflow to add the converted amount to the dummy database and complete.
+      
+    Use this tool when the user says to confirm, add, or store the conversion to the database.
+    This will signal the workflow to proceed with the simulated database add.
+    
+    Args:
+        workflow_id: The workflow ID from convert_currency
+        run_id: The run ID from convert_currency
+    
+    Returns:
+        Confirmation message
     """
     client = await get_temporal_client()
     handle = client.get_workflow_handle(workflow_id=workflow_id)

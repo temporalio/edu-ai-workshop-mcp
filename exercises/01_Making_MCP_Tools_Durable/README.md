@@ -1,11 +1,11 @@
 # Making MCP Tools Durable Exercise #1
 
-In this exercise, you'll create an additional tool for Claude Desktop to be able to use: creating a chart to plot the temperature in a place over the span of five days. After having Claude Desktop give you the weather forecast, you'll then generate a chart as well.
+In this exercise, you'll create an additional tool for your MCP Client to be able to use: creating a chart to plot the temperature in a place over the span of five days. After having your MCP Client give you the weather forecast, you'll then generate a chart as well.
 
 During this exercise, you will:
 
 - Build durability and persistence to your MCP tools with Temporal Workflows
-- Test the integration between Claude Desktop, MCP servers, and Temporal workflows
+- Test the integration between MCP Clients, MCP servers, and Temporal workflows
 
 Make your changes to the code in the `practice` subdirectory (look for TODO comments that will guide you to where you should make changes to the code). If you need a hint or want to verify your changes, look at the complete version in the `solution` subdirectory.
 
@@ -28,7 +28,7 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 ## Part D: Create your MCP Tool that generates your weather chart
 
 8. In `mcp_servers/weather.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow. 
-9. Use this provided comment that describes what the tool does so that the tool can present its capabilities to Claude Desktop. Save your file.
+9. Use this provided comment that describes what the tool does so that the tool can present its capabilities to your MCP Client. Save your file.
 Provided comment:
 
 """Generate a weather chart visualization for a location using Temporal workflow.
@@ -58,7 +58,7 @@ Provided comment:
 10. Run your Worker with `uv run worker.py` from the `practice` directory in a new terminal.
 11. To register a new tool, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
 12. Go to the MCP Client interface and click `Load More Tools`. You should now see two available tools: `get_forecast` and `get_weather_chart`.
-13. Test your tool by prompting Claude Desktop first for the weather forecast from a city of your choice. OpenAI will decide to use the `get_forecast` tool.
+13. Test your tool by prompting first for the weather forecast from a city of your choice. OpenAI will decide to use the `get_forecast` tool.
 14. Then ask it to 'make me a chart to visualize the weather data'. OpenAI will decide to use the `get_weather_chart` tool.
 15. Allow it to use the `Get Weather Chart` tool.
 

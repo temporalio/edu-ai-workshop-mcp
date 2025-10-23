@@ -47,7 +47,7 @@ By completing this workshop, you'll learn:
 
 1. **Build long-running MCP tools that survive crashes, restarts, and infrastructure failures** which also include durable Timers, Signals, and Queries
 
-2. **Durability and Fault Tolerance** - Build durability and persistence to your MCP tools with Temporal Workflows and test the integration between Claude Desktop, MCP servers, and Temporal workflows
+2. **Durability and Fault Tolerance** - Build durability and persistence to your MCP tools with Temporal Workflows and test the integration between MCP Clients, MCP servers, and Temporal workflows
 
 ## Contributing
 
