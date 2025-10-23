@@ -26,7 +26,6 @@ async def get_forecast(latitude: float, longitude: float) -> str:
         latitude: Latitude of the location
         longitude: Longitude of the location
     """
-    # The business logic has been moved into the temporal workflow, the mcp tool kicks off the workflow
     client = await get_temporal_client()
     handle = await client.start_workflow(
         workflow="GetForecast",
