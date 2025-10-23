@@ -33,7 +33,7 @@ To do this, we will use `workflow.wait_condition`. Please invoke this logic.
 9. Save your Workflow file.
 
 ## Part D: Setting Up Your MCP Tools
-10. In `mcp_servers/invoice.py` please add a tool in to invoke the `ConvertCurrencyWorkflow`. We will provide it here:
+10. In `mcp_servers/invoice.py` (at root of directory) please add a tool in to invoke the `ConvertCurrencyWorkflow`. We will provide it here:
 
 ```python
 @mcp.tool
@@ -70,6 +70,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
 12. Create a tool which invokes the `GetConversionAmount` Query.
   - Use this provided comment that describes what the tool does so that the tool can present its capabilities to the MCP Client. 
   """Query the converted amount from a currency conversion workflow."""
+  - Our solution is in our solution is in `/solution/mcp_servers/invoice.py`
 13. Save your `mcp_servers/invoice.py` file.
 
 ## Part E: Testing Your MCP Tools
@@ -101,7 +102,7 @@ async def convert_currency(amount: float, from_currency: str, to_currency: str) 
   ]
 }`. The `convert_currency` tool will be called.
 14. Look at the Web UI and confirm that your Workflow is running.
-15. In your MCP Client interface, complete the Workflow Execution by: "Confirm that the converted amount has been added to the Dummy database."
+15. In your MCP Client interface, complete the Workflow Execution by: "Confirm that the converted amount has been added to the Dummy database and complete workflow execution."
 16. Test your Query by prompting the MCP Client Interface for the conversion amount.
 
 ## This is the end of the exercise.

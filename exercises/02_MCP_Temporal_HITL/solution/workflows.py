@@ -1,6 +1,7 @@
 from datetime import timedelta
 from temporalio import workflow
 from temporalio.common import RetryPolicy
+from temporalio.exceptions import ApplicationError
 from activities import payment_gateway, convert_currency
 
 @workflow.defn

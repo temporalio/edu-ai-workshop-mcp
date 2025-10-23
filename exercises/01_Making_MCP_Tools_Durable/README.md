@@ -27,7 +27,7 @@ Make your changes to the code in the `practice` subdirectory (look for TODO comm
 
 ## Part D: Create your MCP Tool that generates your weather chart
 
-8. In `mcp_servers/weather.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow. 
+8. In `mcp_servers/weather.py` (at the root of this directory), create a `get_weather_chart` tool that calls your `GetWeatherChart` Workflow (our solution is in `/solution/mcp_servers/weather.py`)
 9. Use this provided comment that describes what the tool does so that the tool can present its capabilities to your MCP Client. Save your file.
 Provided comment:
 
@@ -60,6 +60,5 @@ Provided comment:
 12. Go to the MCP Client interface and click `Load More Tools`. You should now see two available tools: `get_forecast` and `get_weather_chart`.
 13. Test your tool by prompting first for the weather forecast from a city of your choice. OpenAI will decide to use the `get_forecast` tool.
 14. Then ask it to 'make me a chart to visualize the weather data'. OpenAI will decide to use the `get_weather_chart` tool.
-15. Allow it to use the `Get Weather Chart` tool.
 
 ## This is the end of the exercise.
