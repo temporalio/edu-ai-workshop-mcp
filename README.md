@@ -9,6 +9,15 @@ This workshop demonstrates two key concepts:
 1. **Explore how to create durable MCP tools with Temporal** - How to create MCP tools that can withstand against distributed system challenges like network outages
 2. **Build long-running MCP tools** - How to build MCP tools that include durable timers, Signals, and Queries
 
+## How to Use this Repository
+
+1. To present this workshop, present in Codespace so that students don't need to download any software on their machines. To do so, refer to [this document](./codespaces.md).
+2. This repository contains the Jupyter notebooks under [the notebooks directory](./notebooks). The notebooks are used as an educational tool for students to get practice with being hands-on with Temporal. 
+3. The slides that accompany the Jupyter notebooks are [here](https://docs.google.com/presentation/d/1MF9Rm-Ii5QjI1BVnRmuSZtHuV0NAA-besDfcongG6VU/edit?usp=drive_link) and are used for the live (non-self-serve) version.
+4. The instructor goes through the slides. When there is a a little icon of a person at a keyboard on the bottom right of the slides, this lets students know that it's time to get hands-on and move to the notebooks.
+5. There will also be time for students to practice working independently with the material in the [exercises directory](./exercises/). The Jupyter notebooks will reference when it's time to do work on an exercise directory.
+6. For the live version of this workshop (uses slides), refer to the `main` branch on this repository.
+
 ## Repository Structure
 
 ```
