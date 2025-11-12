@@ -4,11 +4,11 @@ This repository contains a hands-on workshop demonstrating how to build durable 
 
 ## How to Use this Repository
 
-1. To present this workshop, present in Codespace so that students don't need to download any software on their machines. To do so, refer to [this document](./codespaces.md).
-2. This repository contains the Jupyter notebooks under [the notebooks directory](./notebooks). The notebooks are used as an educational tool for students to get practice with being hands-on with Temporal. 
+1. To try this workshop, use in Codespace so that you don't need to download any software on their machines. To do so, refer to [this document](./codespaces.md).
+2. This repository contains the Jupyter notebooks under [the notebooks directory](./notebooks). The notebooks are used as an educational tool for to get practice with being hands-on with Temporal. 
 3. The slides that accompany the Jupyter notebooks are [here](https://docs.google.com/presentation/d/1MF9Rm-Ii5QjI1BVnRmuSZtHuV0NAA-besDfcongG6VU/edit?usp=drive_link).
-4. The instructor goes through the slides. When there is a a little icon of a person at a keyboard on the bottom right of the slides, this lets students know that it's time to get hands-on and move to the notebooks.
-5. There will also be time for students to practice working independently with the material in the [exercises directory](./exercises/). The Jupyter notebooks will reference when it's time to do work on an exercise directory.
+4. When there is a a little icon of a person at a keyboard on the bottom right of the slides, this lets you know that it's time to get hands-on and move to the notebooks.
+5. There will also be time for you to practice working independently with the material in the [exercises directory](./exercises/). The Jupyter notebooks will reference when it's time to do work on an exercise directory.
 6. For the self-serve version of this workshop (no need for slides), refer to the `self-serve-version` branch on this repository.
 
 ## Workshop Overview
@@ -30,14 +30,9 @@ This workshop demonstrates two key concepts:
 └── mcp_servers         # Where you will define your MCP servers needed for the Workshop
 ```
 
-## Prerequisites
-
-- Python 3.13+
-- [OpenAI API Key](https://platform.openai.com/api-keys)
-
 ## Access to Other Repositories
 
-For the demos, you also need these repositories cloned on your local machine.
+For the demos, you also need these repositories.
 - [Durable MCP](https://github.com/temporal-community/durable-mcp) for chapter 1
 - [Temporal Invoice MCP](https://github.com/Aslan11/temporal-invoice-mcp/) for chapter 2
 
@@ -46,9 +41,6 @@ For the demos, you also need these repositories cloned on your local machine.
 You can run this workshop on Codespaces as an Exercise Environment.
 
 You can launch an exercise environment for this course using GitHub Codespaces by following [this](codespaces.md) walkthrough.
-
-Before presenting, make sure you have cleared all outputs if you've experiemented with this workshop prior to presenting.
-![Clear all outputs](https://i.postimg.cc/RZvQmxLP/clear-all-outputs.png)
 
 ## Key Learning Outcomes
 
