@@ -34,7 +34,7 @@ async def process_invoice(
     customer: Customer name (e.g., "ACME Corp")
     item_description: Description of the item (e.g., "Widget A")
     amount: Amount in dollars (e.g., 100)
-    due_date: Due date in YYYY-MM-DD format (e.g., "2024-06-30")
+    due_date: Due date in YYYY-MM-DD format (e.g., "2025-06-30")
         
     Returns: Dictionary with workflow_id and run_id
     """
