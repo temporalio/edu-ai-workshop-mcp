@@ -56,9 +56,10 @@ Provided comment:
 ## Part E: Test your MCP tool
 
 10. Run your Worker with `uv run worker.py` from the `practice` directory in a new terminal.
-11. To register a new tool, restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
-12. Go to the MCP Client interface and click `Load More Tools`. You should now see two available tools: `get_forecast` and `get_weather_chart`.
-13. Test your tool by prompting first for the weather forecast from a city of your choice. OpenAI will decide to use the `get_forecast` tool.
-14. Then ask it to 'make me a chart to visualize the weather data'. OpenAI will decide to use the `get_weather_chart` tool.
+11. To register a new tool, make sure you have configured your MCP client from the 1st notebook. If you haven't done that yet, go to `notebooks/01_MCP_Temporal_Intro.ipynb` and go to the `Configure Your MCP Client` section and follow the steps.
+12. Restart the MCP server in Codespaces. Do this by going to the terminal window where you're running `uv run mcp_servers/weather.py`, stop it with `Ctrl+C`, then run it again.
+13. Go to the MCP Client interface and click `Load More Tools`. You should now see two available tools: `get_forecast` and `get_weather_chart`.
+14. Test your tool by prompting first for the weather forecast from a city of your choice. OpenAI will decide to use the `get_forecast` tool.
+15. Then ask it to 'make me a chart to visualize the weather data'. OpenAI will decide to use the `get_weather_chart` tool.
 
 ## This is the end of the exercise.
