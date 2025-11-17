@@ -6,7 +6,7 @@ This repository contains a hands-on workshop demonstrating how to build durable 
 
 1. To try this workshop, use in Codespace so that you don't need to download any software on their machines. To do so, refer to [this document](./codespaces.md).
 2. This repository contains the Jupyter notebooks under [the notebooks directory](./notebooks). The notebooks are used as an educational tool for to get practice with being hands-on with Temporal. 
-3. The slides that accompany the Jupyter notebooks are [here](https://docs.google.com/presentation/d/1MF9Rm-Ii5QjI1BVnRmuSZtHuV0NAA-besDfcongG6VU/edit?usp=drive_link).
+3. The slides that accompany the Jupyter notebooks are [here](/assets/slides).
 4. When there is a a little icon of a person at a keyboard on the bottom right of the slides, this lets you know that it's time to get hands-on and move to the notebooks. 
     - If you start running out of time, in the solution directories, there are solution files (e.g. `notebooks/01_MCP_Temporal_Intro_Solution/01_MCP_Temporal_Solution`) with filled out versions of the notebooks
 5. There will also be time for you to practice working independently with the material in the [exercises directory](./exercises/). The Jupyter notebooks will reference when it's time to do work on an exercise directory.
