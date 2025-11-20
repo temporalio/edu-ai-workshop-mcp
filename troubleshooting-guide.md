@@ -52,6 +52,12 @@ If there's an issue like a typo in your workflow code, it will cause a workflow 
 - Restart the Worker using the code block in section 1 above
 - Re-run your Workflow
 
-## MCP Issues
+## 4. MCP Configuration Issues
 
 - If your tools aren't loading, verify that port 5125 is set to **Public** in the Ports tab. Right-click the port → Port Visibility → Public.
+
+### 5. Unable to Access Codespace
+
+If you are unable to create a Codespace, make sure that you go through the SSO process with Temporalio. To do so, click the Settings tab on the repo which will take you through an authentication process to sign in.
+
+![Unable to Access Codespace](https://i.postimg.cc/6pKFNKht/authenticate-sso.png)
